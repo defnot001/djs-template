@@ -1,0 +1,25 @@
+{
+  "name": "djs-template",
+  "version": "1.0.0",
+  "description": "Template repository to quickstart developing discord bots usind discord.js v14.",
+  "main": "src/index.ts",
+  "repository": "https://github.com/defnot001/djs-template",
+  "author": "defnot001",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-esm src/index.ts",
+    "build": "rm -rf dist && tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "djs-handlers": "^1.0.2",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.4"
+  }
+}
