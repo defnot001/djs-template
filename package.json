@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "discord.js": "^14.7.1",
-    "djs-handlers": "^1.0.2",
     "dotenv": "^16.0.3"
   },
   "devDependencies": {

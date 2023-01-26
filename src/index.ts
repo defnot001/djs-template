@@ -14,6 +14,7 @@ client.start({
   guildID: config.guildID,
   commandsPath: projectPaths.commands,
   eventsPath: projectPaths.events,
+  type: 'commonJS',
   globalCommands: false,
   registerCommands: true,
 });
