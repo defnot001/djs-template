@@ -14,4 +14,5 @@ client.start({
   eventsPath: projectPaths.events,
   globalCommands: false,
   registerCommands: true,
+  type: 'module',
 });
