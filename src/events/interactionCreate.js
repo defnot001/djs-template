@@ -1,23 +1,18 @@
-import type {
-  CommandInteractionOptionResolver,
-  TextBasedChannel,
-} from 'discord.js';
-import { Event, IExtendedInteraction } from 'djs-handlers';
-import { client } from '..';
+const { Event } = require('djs-handlers');
+const { client } = require('../index');
 
-export default new Event('interactionCreate', async (interaction) => {
+exports.default = new Event('interactionCreate', async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
   const command = client.commands.get(interaction.commandName);
 
-  const getChannelName = (channel: TextBasedChannel | null): string | void => {
+  const getChannelName = (channel) => {
     if (channel && 'name' in channel) {
       return channel.name;
     }
   };
 
-  const channelNameAddon: string =
-    `in #${getChannelName(interaction.channel)}` || '';
+  const channelNameAddon = `in #${getChannelName(interaction.channel)}` || '';
 
   console.log(
     `${interaction.user.tag} ${channelNameAddon} triggered an interaction.`,
@@ -32,9 +27,9 @@ export default new Event('interactionCreate', async (interaction) => {
 
   try {
     return command.execute({
-      args: interaction.options as CommandInteractionOptionResolver,
+      args: interaction.options,
       client,
-      interaction: interaction as IExtendedInteraction,
+      interaction: interaction,
     });
   } catch (err) {
     return interaction.reply({
