@@ -1,4 +1,4 @@
-import { ApplicationCommandOptionType } from 'discord.js';
+import { ApplicationCommandOptionType, userMention } from 'discord.js';
 import { Command } from 'djs-handlers';
 
 export default new Command({
