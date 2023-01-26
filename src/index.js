@@ -1,10 +1,8 @@
 import { GatewayIntentBits } from 'discord.js';
 import { ExtendedClient } from 'djs-handlers';
-import dotenv from 'dotenv';
-import { config } from './config/config';
-import { projectPaths } from './util/projectPaths';
+import { config } from './config/config.js';
+import { projectPaths } from './util/projectPaths.js';
 
-dotenv.config();
 export const client = new ExtendedClient({
   intents: [GatewayIntentBits.Guilds],
 });

@@ -1,9 +1,9 @@
-import { ApplicationCommandOptionType, userMention } from 'discord.js';
+import { ApplicationCommandOptionType } from 'discord.js';
 import { Command } from 'djs-handlers';
 
 export default new Command({
   name: 'ping',
-  description: 'Pings a user.',
+  description: 'Pong!',
   options: [
     {
       name: 'target',
